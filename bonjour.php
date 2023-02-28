@@ -1,30 +1,28 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
-</head>
-<body>
+/*LES FONCTIONS
+
+Ecrivez une fonction qui permette de générer un lien.*/
+
 <?php
 
-$departements = array(
-    "Hauts-de-france" => array("Aisne", "Nord", "Oise", "Pas-de-Calais", "Somme"),
-    "Bretagne" => array("Côtes d'Armor", "Finistère", "Ille-et-Vilaine", "Morbihan"),
-    "Grand-Est" => array("Ardennes", "Aube", "Marne", "Haute-Marne", "Meurthe-et-Moselle", "Meuse", "Moselle", "Bas-Rhin", "Haut-Rhin", "Vosges"),
-    "Normandie" => array("Calvados", "Eure", "Manche", "Orne", "Seine-Maritime")
-);
+function createlien($lien,$titre){
+    $bouton = "<a href= $lien > $titre </a>";
+    echo $bouton;
+}
 
-ksort($departements);
-
-     // Lecture de chaque lignes du tableau
-    foreach($departements as $cle=>$valeur){
-       echo $cle." : ".count($valeur)." départements <br>";
-     }
-
+createlien("https://www.reddit.com/", "Reddit Hug");
 
 
 ?>
-</body>
-</html>
+
+/*Ecrivez une fonction qui calcul la somme des valeurs d'un tableau*/
+
+<?php
+$tab = array(4, 3, 8, 2);
+
+function somme($table){
+    return array_sum($table);
+}
+
+$resultat = somme($tab);
+echo $resultat;
+?>
