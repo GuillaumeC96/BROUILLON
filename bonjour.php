@@ -26,3 +26,31 @@ function somme($table){
 $resultat = somme($tab);
 echo $resultat;
 ?>
+
+
+/*Créer une fonction qui vérifie le niveau de complexité d'un mot de passe*/
+
+<?php
+$entry = "TopSecret42";
+function valide($pass){
+
+$passlen = strlen($pass);
+
+$NBR = array(1,2,3,4,5,6,7,8,9);
+$replaceNBR = str_replace($NBR,"",$pass);
+$replacelenNBR = strlen($replaceNBR);
+$NBRbool = $replacelenNBR < $passlen;
+
+$replaceMAJ = preg_replace('#[A-Z]*#', '',$pass);
+$replacelenMAJ = strlen($replaceMAJ);
+$MAJbool = $replacelenMAJ < $passlen;
+
+$replaceMIN = preg_replace('#[a-z]*#', '',$pass);
+$replacelenMIN = strlen($replaceMIN);
+$MINbool = $replacelenMIN < $passlen;
+
+if($NBRbool ==true && $MAJbool==true && $MINbool==true){return true;}
+}
+
+echo valide($entry);
+?>
