@@ -8,30 +8,77 @@
 </head>
 <body>
 <?php
-function table($nbr, $nbr2)
-{
- 
-$table = '<table border="2">';
 
-for ($t=-1; $t <= $nbr; $t++) {
-if($t==-1){$table .= '<td></td>';}else{$table .= '<td><b>'.$t.'<b></td>';}
-}
 
-for ($a=0; $a <= $nbr; $a++) {
-$table .= '<tr>';
-for ($b=1; $b <= $nbr2+2 ; $b++) {
-    $d = $b;
-    if($b==2){$d=0;}
-    if($b>2){$d=$b-2;}
 
-if($b==1){$table .= '<td><b>'.$a*$d.'<b></td>';}else{$table .= '<td>'.$a*$d.'</td>';}
-}
-$table .= '</tr>';
-}
-$table .= '</table>';
-return $table;
-}
-echo table(12, 12);
+$pays = array (
+    "Bucarest" => "Roumanie",
+    "Bruxelles" => "Belgique",
+    "Oslo" => "Norvège",
+    "Ottawa" => "Canada",
+    "Paris" => "France",
+    "Port-au-Prince" => "Haïti",
+    "Port-d'Espagne" => "Trinité-et-Tobago",
+    "Prague" => "République tchèque",
+    "Rabat" => "Maroc",
+    "Riga" => "Lettonie",
+    "Rome" => "Italie",
+    "San José" => "Costa Rica",
+    "Santiago" => "Chili",
+    "Sofia" => "Bulgarie",
+    "Alger" => "Algérie",
+    "Amsterdam" => "Pays-Bas",
+    "Andorre-la-Vieille" => "Andorre",
+    "Asuncion" => "Paraguay",
+    "Athènes" => "Grèce",
+    "Bagdad" => "Irak",
+    "Bamako" => "Mali",
+    "Berlin" => "Allemagne",
+    "Bogota" => "Colombie",
+    "Brasilia" => "Brésil",
+    "Bratislava" => "Slovaquie",
+    "Varsovie" => "Pologne",
+    "Budapest" => "Hongrie",
+    "Le Caire" => "Egypte",
+    "Canberra" => "Australie",
+    "Caracas" => "Venezuela",
+    "Jakarta" => "Indonésie",
+    "Kiev" => "Ukraine",
+    "Kigali" => "Rwanda",
+    "Kingston" => "Jamaïque",
+    "Lima" => "Pérou",
+    "Londres" => "Royaume-Uni",
+    "Madrid" => "Espagne",
+    "Malé" => "Maldives",
+    "Mexico" => "Mexique",
+    "Minsk" => "Biélorussie",
+    "Moscou" => "Russie",
+    "Nairobi" => "Kenya",
+    "New Delhi" => "Inde",
+    "Stockholm" => "Suède",
+    "Téhéran" => "Iran",
+    "Tokyo" => "Japon",
+    "Tunis" => "Tunisie",
+    "Copenhague" => "Danemark",
+    "Dakar" => "Sénégal",
+    "Damas" => "Syrie",
+    "Dublin" => "Irlande",
+    "Erevan" => "Arménie",
+    "La Havane" => "Cuba",
+    "Helsinki" => "Finlande",
+    "Islamabad" => "Pakistan",
+    "Vienne" => "Autriche",
+    "Vilnius" => "Lituanie",
+    "Zagreb" => "Croatie"); 
+
+
+     // Lecture de chaque lignes du tableau
+    foreach($pays as $cle=>$valeur){
+        if(substr($cle,0,1)=="B"){unset($cle);} else {echo $cle.' : '.$valeur.'<br>';}
+     }
+
+
+
 ?>
 </body>
 </html>
