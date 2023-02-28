@@ -20,7 +20,7 @@ ksort($departements);
 
      // Lecture de chaque lignes du tableau
     foreach($departements as $cle=>$valeur){
-       echo $cle." : ".implode(", ",$valeur)."<br>";
+       echo $cle." : ".count($valeur)." départements <br>";
      }
 
 
